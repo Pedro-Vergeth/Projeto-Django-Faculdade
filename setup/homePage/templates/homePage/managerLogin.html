@@ -1,0 +1,93 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block header %}
+
+<div class="container-fluid">
+                
+    <a class="navbar-brand" href="{% url 'home' %}">PeopleManager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+              
+          </ul>
+          
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{% url 'loginRepresentante' %}" class="nav-link">Representante</a>
+          </div>
+      </div>            
+  </div>
+
+{% endblock %} 
+
+{% block content %}
+<main>
+    <div class="main-div">
+        <div class="login_square">
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <div class="cadastrar_a"> 
+                    <p>Não tem cadastro?</p>
+                    <a href="{% url 'cadastrarManager'%}" class="nav-link">Cadastrar</a>
+                </div>
+              </form>
+        </div>
+    </div>
+</main>
+<style>
+    main{
+        height: 100vh; 
+        background-image: url('{% static 'img/landscapeLogin.png' %}');
+    }
+    .main-div{
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        height: 100%;
+        flex-direction: column;
+        
+    }
+
+    .login_square{
+        height: 400px; 
+        width: 600px; 
+        background-color: transparent; 
+        backdrop-filter: blur(10px);
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        color: white;
+        border:#191970 20px;
+        border-radius: 50px;
+        border-color: #191970;
+    }
+    .login_square form{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    .cadastrar_a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+</style>
+{% endblock %}

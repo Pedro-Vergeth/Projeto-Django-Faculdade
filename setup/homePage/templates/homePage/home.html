@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block header %}
+<div class="container-fluid">
+                
+    <a class="navbar-brand" href="#">PeopleManager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                   <a class="nav-link" href="#">Funcionalidades</a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Planos</a>
+              </li>
+          </ul>
+          
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="nav-link" href="{% url 'managerLogin' %}">Entrar</a>
+              <button class="btn btn-primary" type="button" id="darkMode">&#x1F319</button>
+          </div>  
+      </div>            
+  </div>
+{% endblock %} 
+
+{% block content %}
+<main>
+    <div class="home" >
+        <div class="home_descricao" style="height: 70vh; width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-left: 80px;" >
+            <div style="display: flex; align-items: start; flex-direction: column; width: 100%; justify-content: flex-start; margin-bottom: 20px;">
+                <h1>
+                    PeopleManager
+                </h1>
+                <h3>
+                    Um novo jeito de administrar
+                </h3>
+            </div>
+            <p>
+                O PeopleManager é uma plataforma inovadora para o gerenciamento eficaz de pessoas e equipes. Projetada para empresas de todos os tamanhos, nossa solução oferece ferramentas poderosas que facilitam a administração de recursos humanos, promovendo um ambiente de trabalho colaborativo e produtivo.        </div>
+        <div class="home_img" style="height: 70vh; width: 50%; display: flex; justify-content: center; align-items: center;">
+            <img src="{% static 'img/imgHome1.png' %}" alt="imagem de pessoas conferindo dados">
+        </div>
+    </div>
+</main>
+{% endblock %}
