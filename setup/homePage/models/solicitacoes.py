@@ -1,11 +1,12 @@
 from django.db import models
-from .managers import manager
+from .managers import Manager
 
-class solicitacao(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    date = models.DateField()
-    manager = models.ForeignKey(manager, on_delete=models.CASCADE)
+class Solicitacao(models.Model):
+    title = models.CharField(max_length=255, null=False, blank=False)
+    description = models.TextField(max_length=255, null=False, blank=False)
+    date = models.DateField(null=False)
+    status = models.TextField(max_length=255, default='Pendente')
+    manager = models.ForeignKey(Manager, on_delete=models.CASCADE)
 
 
 

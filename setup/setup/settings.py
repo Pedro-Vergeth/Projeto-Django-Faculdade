@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homePage',
+    'homeManager',
 ]
 
 MIDDLEWARE = [
@@ -77,14 +78,15 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projeto_django',
-        'USER': 'acessodjango2',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTHENTICATION_BACKENDS = [
+    'homePage.backends.MultiModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 
 # Password validation

@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block header %}
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" href="#">PeopleManager</a>
+                </div>  
+              
+                <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        
+                    </ul>
+                    <h1>Bem vindo {{nome}}</h1>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'homeManager:managerLogout' %}">Sair</a>
+                        <button class="btn btn-primary" type="button" id="darkMode">&#x1F319</button>
+                    </div>
+                </div>            
+            </div>
+            
+{% endblock %}
+
+{% block content %}
+<div class="painelManager" style="display: flex; justify-content: space-between; flex-direction: column; align-items: center; height: 80vh;">
+    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <h1>Solicitações</h1>
+        <table border="1" class="table" style="width: 80%;" >
+            <tr>
+                <th>Titulo</th>
+                <th>Descrição</th>
+                <th>data</th>
+                <th>Status</th>
+                <th>Representante</th>
+                <th>Responder</th>
+            </tr>
+            
+            <tr>
+                <td>tijolos</td>
+                <td>quero tijolos para construir minha casa</td>
+                <td>10/10/2024</td>
+                <td>Pendente</td>
+                <td>Fulano</td>
+                <td><button class="btn btn-outline-primary">👍</button> <button class="btn btn-outline-danger">👎</button></td>
+            </tr>
+            
+        </table>
+    </div>
+    <div style="width: 100%; display: flex; align-items: center; justify-content: space-evenly;">
+        <button class="btn btn-primary btn-lg" style="background-color: #191970;">
+            Representantes
+        </button>
+        <button class="btn btn-primary btn-lg" style="background-color: #191970;">
+            Todas Solicitações
+        </button>
+    </div>
+</div>
+
+
+{% endblock %}

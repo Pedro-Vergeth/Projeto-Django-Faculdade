@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block header %}
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" href="#">PeopleManager</a>
+                </div>  
+              
+                <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        
+                    </ul>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-primary" type="button" id="darkMode">&#x1F319</button>
+                        <a href="">Cadastrar Representante</a>
+                    </div>
+                </div>            
+            </div>
+            
+{% endblock %}
+
+{% block content %}
+<div class="painelManager" style="display: flex; justify-content: space-between; flex-direction: column; align-items: center; height: 80vh;">
+    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <h1>Solicitações</h1>
+        <table border="1" class="table" style="width: 80%;" >
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Bairro</th>
+                
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -44,5 +44,19 @@
             <img src="{% static 'img/imgHome1.png' %}" alt="imagem de pessoas conferindo dados">
         </div>
     </div>
+    
 </main>
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+<script>
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+                .withAppKey('Y2F0YXRhdTpiNGM1N2M1OS02OWFiLTQyNjgtOTllNS1hMjMyZmMxZWZiYmY=')
+                .withButton({"color":"#191970","icon":""})
+                .withCustomCommonUrl('https://pedro-sarmento-xxuts.chat.blip.ai/')
+                .build();
+        }
+    })();
+</script>
+            
 {% endblock %}
